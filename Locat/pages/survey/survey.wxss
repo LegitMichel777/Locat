@@ -1,0 +1,223 @@
+/* pages/survey/survey.wxss */
+@import "../..//css-image-resources/mainLogo.wxss";
+@import "../..//css-image-resources/thankYou.wxss";
+@import "../..//css-image-resources/submission.wxss";
+@import "../..//css-image-resources/numbers.wxss";
+@import "../..//css-image-resources/bottomLogo.wxss";
+@import "../..//css-image-resources/plusMark.wxss";
+@import "../..//css-image-resources/xMark.wxss";
+@import "../..//css-image-resources/hohono.wxss";
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 8px;
+}
+
+#locat-main-logo {
+    height: 184px;
+    width: 175px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-top: 39px;
+}
+
+#submission-text {
+    height: 22px;
+    width: 236px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 28px;
+}
+
+#submission-form {
+    background-color: #F2F1F6;
+    border-radius: 12px;
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#received-submission {
+    height: 106px;
+    width: 342px;
+    background-size: contain;
+    margin: 35px 0;
+}
+
+.form-question-index {
+    width: 25px;
+    height: 23px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    padding: 11px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    border: 1px solid #BFC0E3;
+    width: 100%;
+    height: 44px;
+    box-sizing: border-box;
+}
+
+.form-input:focus-within {
+    border: 1px solid #686BC9 !important;
+}
+
+#submission-form-inner {
+    padding: 16px 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#submission-form-question {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 27px;
+}
+
+.form-question-label {
+    width: 100%;
+    text-align: justify;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+.form-long-input {
+    padding: 11px;
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    width: 100%;
+    border: 1px #BFC0E3 solid;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+
+.form-long-input:focus-within {
+    border: 1px #686BC9 solid !important;
+}
+
+#add-photo-button {
+    background-color: #FFFFFF;
+    width: 115px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+#add-photo-plus {
+    width: 16px;
+    height: 15px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+#submitted-photo-count {
+    color: #9593A9;
+    margin-top: 11px;
+    font-weight: 500;
+}
+#photo-show-container {
+    margin-top: 21px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 18px;
+}
+
+.image-grid-item {
+    position: relative;
+    width: 100%;
+}
+.image-grid-item-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+    background-color: white;
+    /* background-color: red; */
+}
+
+#form-submission-button {
+    margin-up: 29px;
+    height: 44px;
+    width: 120px;
+    background-color: #3B4265;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.submission-footer {
+    margin-top: 23px;
+    margin-bottom: 90px;
+    width: 142px;
+    height: 44px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.ho-ho-no-image {
+    width: 263px;
+    height: 167px;
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-bottom: 17px;
+}
+
+.ho-ho-no-label {
+    line-height: 20px;
+    text-align: center;
+    margin: 0 40px;
+    font-weight: 500;
+    color: #030025;
+}
+
+.ho-ho-no-master-container {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-question-error {
+    color: #D0543F;
+    margin-top: 9px;
+}
+
+.image-delete-icon {
+    width: 9px;
+    height: 9px;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+.image-delete-button {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 11px;
+}

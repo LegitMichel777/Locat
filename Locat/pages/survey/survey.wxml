@@ -1,0 +1,57 @@
+<!--pages/survey/survey.wxml-->
+<view id="main-container">
+    <view id="locat-main-logo" class="image-mainlogo-background-style"></view>
+    <view id="submission-text" class="image-submission-background-style"></view>
+    <view id="submission-form">
+        <block wx:if="{{pageState === 'error'}}">
+            <view class="ho-ho-no-master-container">
+                <view class="ho-ho-no-image image-hohono-background-style"></view>
+                <text class="ho-ho-no-label">Sorry, we’ve encountered an error. Please try again.</text>
+            </view>
+        </block>
+        <block wx:if="{{pageState === 'periodEnded'}}">
+            <view class="ho-ho-no-master-container">
+                <view class="ho-ho-no-image image-hohono-background-style"></view>
+                <text class="ho-ho-no-label">The form has ended! Catrun instead of catwalk next time!</text>
+            </view>
+        </block>
+        <block wx:if="{{pageState === 'complete'}}">
+            <view id="received-submission" class="image-thankyou-background-style"></view>
+        </block>
+        <view wx:if="{{pageState === 'submission'}}" id="submission-form-inner">
+            <view wx:for="{{questions}}" wx:for-index="index" id="submission-form-question">
+                <view class="form-question-index image-{{index+1}}-background-style"></view>
+                <text class="form-question-label">{{item.name}}</text>
+                <block wx:if="{{item.length == 'short'}}">
+                    <input class="form-input" bindinput = "shortInputChanged" data-index='{{index}}' value='{{responses[index]}}' />
+                </block>
+                <block wx:if="{{item.length == 'multiline'}}">
+                    <textarea class="form-long-input" bindinput="longInputChanged" data-index='{{index}}' value='{{responses[index]}}' />
+                </block>
+                <view wx:if="{{error[index] !== ''}}" class="form-question-error">
+                    {{error[index]}}
+                </view>
+            </view>
+            <view id="submission-form-question">
+                <view class="form-question-index image-{{questions.length+1}}-background-style"></view>
+                <text class="form-question-label">Lastly, submit some photos of your cat! (Optional)</text>
+                <view id="add-photo-button" bindtap="chooseImageButtonTapped">
+                    <view id="add-photo-plus" class="image-plusmark{{images.length === 6 ? 'inactive' : ''}}-background-style"></view>
+                </view>
+                <text id="submitted-photo-count">{{images.length}}/6 submitted</text>
+                <view id="photo-show-container" wx:if="{{images.length>0}}">
+                    <block wx:for="{{images}}">
+                        <view class="image-grid-item" style="height: {{imagesHeight}}px;">
+                            <view class="image-delete-button" bindtap="deleteImage" data-index="{{index}}">
+                                <view class="image-xmark-background-style image-delete-icon"></view>
+                            </view>
+                            <image src="{{item}}" mode="aspectFill" class="image-grid-item-inner" />
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <view id="form-submission-button" bindtap="submitTapped">Submit</view>
+        </view>
+    </view>
+    <view class="image-bottomlogo-background-style submission-footer"></view>
+</view>
